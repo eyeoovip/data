@@ -8,6 +8,8 @@ services:
     container_name: mysql
     ports:
       - 33060:3306
+    networks:
+      - backend
     volumes:
       - $rootdir/mysql/logs:/var/log/mysql
       - $rootdir/mysql/datas:/var/lib/mysql
