@@ -25,7 +25,7 @@ services:
     networks:
       - backend
     ports:
-      - 39000:9000
+      - 38000:8000
     environment:
       - API_ENV=dev
 
