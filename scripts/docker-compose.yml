@@ -102,7 +102,7 @@ services:
     networks:
       - backend
     ports:
-      - 80:80
+      - 8000:80
     volumes:
       - $rootdir/www:/data/www
       - $rootdir/nginx/logs:/var/log/nginx
