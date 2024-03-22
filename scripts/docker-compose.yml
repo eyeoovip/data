@@ -78,7 +78,8 @@ services:
     networks:
       - backend
     ports:
-      - 38000:8000
+      #- 38000:8000
+      8000:8000
     environment:
       - API_ENV=dev
 
@@ -94,22 +95,22 @@ services:
     environment:
       - API_ENV=dev
 
-  nginx:
-    image: nginx
-    restart: always
-    hostname: nginx
-    container_name: nginx
-    networks:
-      - backend
-    ports:
-      - 8000:80
-    volumes:
-      - $rootdir/www:/data/www
-      - $rootdir/nginx/logs:/var/log/nginx
-      - $rootdir/nginx/config/fastcgi_params:/etc/nginx/fastcgi_params
-      - $rootdir/nginx/config/conf.d:/etc/nginx/conf.d
-      - $rootdir/nginx/config/nginx.conf:/etc/nginx/nginx.conf
-      - $rootdir/nginx/config/includes:/etc/nginx/includes
+  # nginx:
+  #   image: nginx
+  #   restart: always
+  #   hostname: nginx
+  #   container_name: nginx
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 8000:80
+  #   volumes:
+  #     - $rootdir/www:/data/www
+  #     - $rootdir/nginx/logs:/var/log/nginx
+  #     - $rootdir/nginx/config/fastcgi_params:/etc/nginx/fastcgi_params
+  #     - $rootdir/nginx/config/conf.d:/etc/nginx/conf.d
+  #     - $rootdir/nginx/config/nginx.conf:/etc/nginx/nginx.conf
+  #     - $rootdir/nginx/config/includes:/etc/nginx/includes
 
 networks:
   backend:
