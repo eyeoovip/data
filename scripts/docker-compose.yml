@@ -70,6 +70,18 @@ services:
     volumes:
       - $rootdir/go/logs/resourcehub:/data/www/logs
 
+  # edu2b:
+  #   image: harbor.mobimedical.cn/lengjing/edu2b
+  #   restart: always
+  #   hostname: edu2b
+  #   container_name: edu2b
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 38000:8000
+  #   environment:
+  #     - API_ENV=dev
+
   edu2b:
     image: harbor.mobimedical.cn/lengjing/edu2b
     restart: always
@@ -78,8 +90,7 @@ services:
     networks:
       - backend
     ports:
-      #- 38000:8000
-      8000:8000
+      - 8000:8000
     environment:
       - API_ENV=dev
 
