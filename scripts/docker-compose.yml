@@ -93,6 +93,8 @@ services:
       - 8000:8000
     environment:
       - API_ENV=dev
+    volumes:
+      - $rootdir/www/edu2b:/work
 
   edu2c:
     image: harbor.mobimedical.cn/lengjing/edu2c
